@@ -29,16 +29,35 @@
 }
 
 body {
-  background-color: rgb(247,249,252)
+  background-color: rgb(247,249,252);
+  width: 100%;
+  height: 100%;
 }
 
 .title {
   text-align: center;
 }
 
+.mooovie-logo {
+  width: 12.5%;
+  height: 12.5%;
+  padding: 2%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .theatre-info-content {
   display: flex;
   flex-direction: column;
+  padding-top: 3%;
+}
+
+.theatre-info-content > ul {
+  /* margin: 5%; */
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 0;
 }
 
 .movie-rating {
@@ -46,11 +65,7 @@ body {
   color: rgb(96, 96, 96);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.showtime {
+  text-align: center;
+  font-weight: bold;
 }

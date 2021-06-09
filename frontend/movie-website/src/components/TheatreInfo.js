@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import { fetchMovieInfo, fetchTheatreInfo } from '../utils/MovieApi';
+import { formatTo24h, sortTimeList, timePassed } from '../utils/TimeUtil';
 
 const TheatreInfo = (props) => {
 
@@ -40,35 +41,40 @@ const TheatreInfo = (props) => {
     refineSearch();
   }, [props.search])
 
+  // return movie times when given a movie id
   const showTimes = (mid) => {
-    let times = "";
-    for (const [key, val] of Object.entries(tinfo.showtimes)) {
-      if (key == mid) {
-        times = val.toString().replace(',', ', ');
+    let times = [];
+    const mtimes = tinfo.showtimes[mid];
+    sortTimeList(tinfo.showtimes[mid])
+    for (let i = 0; i < mtimes.length; i++) {
+      let showingTime = formatTo24h(mtimes[i])
+      if (timePassed(props.currTime, showingTime)) {
+        times.push(<span style={{ "color": "grey"}}>{mtimes[i]} </span>)
+      }
+      else {
+        times.push(<span style={{ "color": "black"}}>{mtimes[i]} </span>)
       }
     }
     return times;
   }
   
   return (<>
-    <div>Hello from theatre info</div>
     <div className='theatre-info-content'>
-      <h1>{tinfo.name}</h1>
       <ul>
         {
          movies.map((val, idx) => {
             return (<>
               {/* <li>{val}</li> */}
-              <div class="card mb-3" style={{ "maxWidth": "750px" }}>
-                <div class="row no-gutters">
-                  <div class="col-md-4">
-                    <img src={val.poster} class="card-img" alt={`mov-poster-for-${val.title}`}/>
+              {/* style={{ "maxWidth": "50%"}} */}
+              <div className="card mb-3 w-100">
+                <div className="row no-gutters w-80">
+                  <div className="col-md-2">
+                    {/* style={{ "maxHeight": "50%", "maxWidth": "50%" }} */}
+                    <img src={val.poster} className="card-img" style={{ "maxHeight": "95%", "maxWidth": "80%", "margin": "3%" }} alt={`mov-poster-for-${val.title}`}/>
                   </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <span style={{ "display": "inline-block" }}>
-                        <h5 class="card-title">{val.title} <b className="movie-rating">({val.rating})</b></h5>
-                      </span>
+                  <div className="col-md-10">
+                    <div className="card-body">
+                      <h5 className="card-title">{val.title} <b className="movie-rating">({val.rating})</b></h5>
                       <div id="times">{showTimes(val.id)}</div>
                     </div>
                   </div>
