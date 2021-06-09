@@ -16,7 +16,7 @@ export const formatTo24h = (timestr) => {
 
 // Sort times
 export const sortTimeList = (timeList) => {
-    const sortedTime = timeList.sort((a, b) => {
+    return timeList.sort((a, b) => {
         // get time time from string 
         // then get am or pm from string and append
         // both can be done using slice method
@@ -32,7 +32,10 @@ export const timePassed = (dateTime, timestr) => {
     // console.log(dateTimeM);
     // console.log(timestrh);
     // console.log(timestrm);
-    if (dateTimeH > timestrh && dateTimeM > timestrm) {
+    if (dateTimeH > timestrh) {
+        return true;
+    }
+    else if (dateTimeH == timestrh && dateTimeM >= timestrm) {
         return true;
     }
     else {
