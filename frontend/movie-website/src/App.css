@@ -60,12 +60,13 @@ body {
   width: 85%;
   margin: 0px auto;
   max-width: 633px;
-  max-height: 306px;
+  /* max-height: 306px; */
 }
 
 .movie-card-img { 
   margin: 4%; 
   height: 95%;
+  max-height: 348px;
 }
 
 .movie-time-format {
