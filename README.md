@@ -9,7 +9,7 @@ For the backend, you will need the following modules:
 
 For the frontend, you will need the following modules if you don't have them:
 - npm (to install yarn)
-- yarn (npm install --global yarn)
+- yarn (can be installed with "npm install --global yarn")
 
 
 First you need to clone the directory in your workspace.
@@ -51,6 +51,6 @@ You can now view movie-website in the browser.
 If any further problems, feel free to contact me at my email: derricklaurente@gmail.com.
 Hope you enjoy and hopefully I will get to meet you in person.
 
-Cheers
+Cheers,
 
 Derrick Laurente
