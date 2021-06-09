@@ -4,12 +4,15 @@ import { fetchMovieInfo, fetchTheatreInfo } from '../utils/MovieApi';
 import FilterDropbox from './FilterDropbox'
 import MovieCards from './MovieCards';
 
+// React component showing theatre info
 const TheatreInfo = (props) => {
 
+  // State variables
   const [tinfo, setTInfo] = React.useState({});
   const [movies, setMovies] = React.useState([]);
   const [ratingFilter, setFilterRating] = React.useState('All Movies');
 
+  // Initialses all needed state variables
   React.useEffect(() => {
     const getTInfo = async () => {
       const tid = props.tid;
@@ -24,8 +27,9 @@ const TheatreInfo = (props) => {
       setMovies(mdata);
     }
     getTInfo();
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Effect reacts to a refinement in search and filters by ratings
   React.useEffect(() => {
     console.log(`currSearch = ${props.search}`);
     const refineSearch = async () => {
@@ -45,7 +49,7 @@ const TheatreInfo = (props) => {
     }
 
     refineSearch();
-  }, [props.search, ratingFilter])
+  }, [props.search, ratingFilter]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (<>
     <div className='theatre-info-content'>

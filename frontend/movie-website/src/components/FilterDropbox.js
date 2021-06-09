@@ -1,13 +1,10 @@
 import React from "react";
 import '../App.css'
 
+// React component that filters movies by value from dropbox
 const FilterDropbox = ({changeRatingFilter}) => {
 
-
-//   const changeRatingFilte = (e) => {
-//     console.log(e.target.value);
-//   }
-
+  // Passes to parent component function the value from the drop box
   return (<>
     <div className="rating-filter-dropbox">
       <label className="dropbox-label" htmlFor="rating">Choose a rating to filter:</label>
@@ -22,6 +19,7 @@ const FilterDropbox = ({changeRatingFilter}) => {
       </select>
     </div>
   </>);
+
 }
 
 export default FilterDropbox;

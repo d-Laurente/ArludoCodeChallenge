@@ -20,6 +20,7 @@ export const sortTimeList = (timeList) => {
         // get time time from string 
         // then get am or pm from string and append
         // both can be done using slice method
+        // don't care much about date as only interested in the time
         return Date.parse('1970/01/01 ' + a.slice(0, -2) + ' ' + a.slice(-2)) - Date.parse('1970/01/01 ' + b.slice(0, -2) + ' ' + b.slice(-2))
     });
 }
@@ -33,6 +34,7 @@ export const timePassed = (dateTime, timestr) => {
         return true;
     }
     
+    /* eslint eqeqeq: 0 */
     if (dateTimeH == timestrh && dateTimeM >= timestrm) {
         return true;
     }
