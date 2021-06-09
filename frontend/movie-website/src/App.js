@@ -48,11 +48,11 @@ function App() {
       <input id="search-movies-textbox" className="textbox-style form-control" type="text" placeholder="Search movies at Arclight" value={search} onChange={t => setSearch(t.target.value)}></input>
       
       {/* This is for the nav bar */}
-      <ul className="nav nav-tabs nav-bar-format" id="theatre-tab" role="tablist">
+      <ul className="nav nav-pills nav-bar-format" id="theatre-tab" role="tablist">
         {
           theatres.map(val => {
             return (<>
-              <li className="nav-item" role="presentation">
+              <li className="nav-item tab-format" role="presentation">
                 <button className={val.name === currTheatre ? "nav-link active" : "nav-link"} id={`${val.name.toLowerCase()}-tab`} data-bs-toggle="tab" data-bs-target={`#${val.name}`} type="button" role="tab" aria-controls={`${val.name.toLowerCase()}`} aria-selected="true" onClick={() => clickNavTab(`${val.name}`)}>
                   {val.name}
                 </button>

@@ -9,16 +9,17 @@ body {
 }
 
 .mooovie-logo {
-  width: 12.5%;
-  height: 12.5%;
+  width: 107px;
+  height: 140px;
   padding: 2%;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-.content-body > .textbox-style { 
+.content-body > .textbox-style {
   width: 60%;
+  max-width: 633px;
   margin: 0px auto;
 }
 
@@ -47,12 +48,19 @@ body {
 
 .nav-bar-format {
   width: 60%;
+  max-width: 633px;
   margin: 0px auto;
 }
 
+.nav-pills > li > button.active {
+  background-color: #86beee !important;
+}
+
 .theatre-card-size {
-  width: 75%;
+  width: 85%;
   margin: 0px auto;
+  max-width: 633px;
+  max-height: 306px;
 }
 
 .movie-card-img { 
@@ -65,10 +73,39 @@ body {
 }
 
 .rating-filter-dropbox {
+  width: 50%;
+  margin: 7.5px auto;
+}
+
+.time-text {
+  word-wrap: break-word;
+}
+
+.dropbox-label {
+  display: block;
+  text-align: center;
+}
+
+.rating-dropbox {
   margin: 0px auto;
+  width: 100%;
+  max-width: 550px;
 }
 
 @media (max-width: 767px) {
+
+  .content-body > .textbox-style { 
+    width: 70%;
+    margin: 0px auto;
+  }
+
+  .tab-format {
+    width: 100%;
+  }
+
+  .nav-item > button {
+    width: 100%;
+  }
   
   .theatre-card-size {
     /* width: 30%; */
@@ -85,6 +122,19 @@ body {
 
 @media (max-width: 400px) {
   
+  .content-body > .textbox-style { 
+    width: 80%;
+    margin: 0px auto;
+  }
+
+  .tab-format {
+    width: 100%;
+  }
+
+  .nav-item > button {
+    width: 100%;
+  }
+
   .theatre-card-size {
     width: 75%;
     height: 10%;

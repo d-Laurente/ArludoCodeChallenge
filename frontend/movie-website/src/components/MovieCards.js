@@ -11,10 +11,10 @@ const MovieCards = (props) => {
     for (let i = 0; i < mtimes.length; i++) {
       let showingTime = formatTo24h(mtimes[i])
       if (timePassed(props.currTime, showingTime)) {
-        times.push(<span className="time-txt" style={{ "color": "grey"}}>{mtimes[i]} </span>)
+        times.push(<span className="time-text" style={{ "color": "grey"}}>{mtimes[i].replace(' ', '')}  </span>)
       }
       else {
-        times.push(<span className="time-text" style={{ "color": "black"}}>{mtimes[i]} </span>)
+        times.push(<span className="time-text" style={{ "color": "black"}}>{mtimes[i].replace(' ', '')}  </span>)
       }
     }
     return times;
@@ -29,10 +29,10 @@ const MovieCards = (props) => {
               {/* style={{ "maxWidth": "50%"}} */}
               <div className="shadow-lg card mb-3 theatre-card-size">
                 <div className="row no-gutters">
-                  <div className="col-md-3">
+                  <div className="col-md-4">
                     <img src={val.poster} className="card-img movie-card-img" alt={`mov-poster-for-${val.title}`}/>
                   </div>
-                  <div className="col-md-9">
+                  <div className="col-md-8">
                     <div className="card-body">
                       <h5 className="card-title">{val.title} <b className="movie-rating">({val.rating})</b></h5>
                       <div id="times" className="movie-time-format">{showTimes(val.id)}</div>
