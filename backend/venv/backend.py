@@ -30,7 +30,7 @@ def getMovieInfo(id):
             return jsonify(movie), 200
     
     # if reach end of json and info not found
-    return Response("{\"response_msg\": \"no such movies with that id\"}", status=401, mimetype='application/json')
+    return Response("{\"response_msg\": \"no such movies with that id\"}", status=204, mimetype='application/json')
 
 # Returns info regarding theatre id
 @app.route('/theatre-info/<id>', methods=['GET'])
@@ -41,8 +41,7 @@ def getTheatreInfo(id):
             return jsonify(theatre), 200
     
     # if reach end of json and info not found
-    return Response("{\"response_msg\": \"no such theatres with that id\"}", status=402, mimetype='application/json')
-
+    return Response("{\"response_msg\": \"no such theatres with that id\"}", status=204, mimetype='application/json')
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -48,7 +48,7 @@ function App() {
       <input id="search-movies-textbox" className="textbox-style form-control" type="text" placeholder="Search movies at Arclight" value={search} onChange={t => setSearch(t.target.value)}></input>
       
       {/* This is for the nav bar */}
-      <ul className="nav nav-tabs nav-bar-format" id="myTab" role="tablist">
+      <ul className="nav nav-tabs nav-bar-format" id="theatre-tab" role="tablist">
         {
           theatres.map(val => {
             return (<>
