@@ -28,17 +28,14 @@ export const sortTimeList = (timeList) => {
 export const timePassed = (dateTime, timestr) => {
     const [dateTimeH, dateTimeM] = [dateTime.getHours(), dateTime.getMinutes()];
     const [timestrh, timestrm] = timestr.split(':');
-    // console.log(dateTimeH);
-    // console.log(dateTimeM);
-    // console.log(timestrh);
-    // console.log(timestrm);
+
     if (dateTimeH > timestrh) {
         return true;
     }
-    else if (dateTimeH == timestrh && dateTimeM >= timestrm) {
+    
+    if (dateTimeH == timestrh && dateTimeM >= timestrm) {
         return true;
     }
-    else {
-        return false;
-    }
+    
+    return false;
 }

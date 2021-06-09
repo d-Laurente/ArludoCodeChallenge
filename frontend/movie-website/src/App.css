@@ -47,6 +47,11 @@ body {
   margin-right: auto;
 }
 
+.content-body > .textbox-style { 
+  width: 75%;
+  margin: 0px auto;
+}
+
 .theatre-info-content {
   display: flex;
   flex-direction: column;
@@ -68,4 +73,9 @@ body {
 .showtime {
   text-align: center;
   font-weight: bold;
+}
+
+.nav-bar-format {
+  width: 75%;
+  margin: 0px auto;
 }
